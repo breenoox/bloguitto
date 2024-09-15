@@ -1,0 +1,19 @@
+{
+    "name": "humbe/bloguitto",
+    "autoload": {
+        "psr-4": {
+            "Humbe\\Bloguitto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "breenoox",
+            "email": "106892141+breenoox@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "coffeecode/datalayer": "1.1.*",
+        "coffeecode/router": "1.0.*",
+        "league/plates": "v4.0.0-alpha"
+    }
+}
