@@ -6,10 +6,8 @@ class DeletePost
 {
     public function deletePost($data)
     {
-        if(isset($data['id']) && is_numeric($data['id'])) {
-            $postId = (int) $data['id'];
-
-            $post = (new Posts())->findById($postId);
+        if(isset($data['id'])) {
+            $post = (new Posts())->findById($data['id']);
 
             if($post) {
                 if($post->destroy()) {

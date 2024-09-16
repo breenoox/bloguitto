@@ -7,9 +7,9 @@ class UpdatePost
     public function updatePost()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $postId = isset($_POST['post_id']) ? (int) $_POST['post_id'] : 0;
-            $title = $_POST['title'] ?? '';
-            $description = $_POST['description'] ?? '';
+            $postId = isset($_POST['post_id']) ? (int)$_POST['post_id'] : 0;
+            $title = $_POST['title'] ?? 'Titulo não preenchido';
+            $description = $_POST['description'] ?? 'Descrição não preenchida.';
 
             if ($postId && $title && $description) {
                 $post = (new Posts())->findById($postId);
@@ -24,6 +24,7 @@ class UpdatePost
                     } else {
                         echo "Erro ao atualizar o post. ";
                     }
+
                 } else {
                     echo "Post não encontrado.";
                 }
@@ -35,7 +36,7 @@ class UpdatePost
 
     public function edit($data)
     {
-        if (isset($data['id']) && is_numeric($data['id'])) {
+        if (isset($data['id'])) {
             $postId = (int) $data['id'];
             $post = (new Posts())->findById($postId);
 

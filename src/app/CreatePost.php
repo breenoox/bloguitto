@@ -17,7 +17,6 @@
             $post->title = $title;
             $post->description = $description;
 
-            
             if ($post->save()) {
                 header('Location: ' . URL_BASE);
                 exit;
