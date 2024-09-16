@@ -9,8 +9,17 @@
         <ul>
             <?php foreach ($posts as $post): ?>
                 <li>
-                    <h2><?php echo ($post->title); ?></h2>
-                    <p><?php echo ($post->description); ?></p>
+
+                <?php foreach ($users as $user): ?>
+                    <?php if ($post->user_id === $user->id) :?>
+                        <h2><?php echo ($user->first_name); ?></h2>
+                        <?php break;?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+                <h4><?php echo ($post->title); ?></h4>
+                <p><?php echo ($post->description); ?></p>
+
                 </li>
 
                 <form method="post" action="/bloguitto/delete/<?php echo ($post->post_id); ?>">
@@ -26,5 +35,6 @@
     <?php else: ?>
         <p>No posts found.</p>
     <?php endif; ?>
+
 </body>
 </html>
