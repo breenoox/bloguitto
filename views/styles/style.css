@@ -1,0 +1,107 @@
+*  {
+    margin: 0;      
+    padding: 0;    
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif;
+}
+
+.teste {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.teste-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.editButton, .deleteButton  {
+    display: inline-block;
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+    width: 150px; /* Largura fixa para todos os botões */
+}
+
+
+/* Estilo do botão de excluir */
+.deleteButton {
+    display: inline-block;
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #fff; /* Cor do texto */
+    background-color: #f44336; /* Cor de fundo vermelha */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+}
+
+.deleteButton:hover {
+    background-color: #d32f2f; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+}
+
+.deleteButton:active {
+    background-color: #c62828; /* Cor de fundo ao clicar */
+    transform: scale(1); /* Mantém o tamanho normal ao clicar */
+}
+
+
+.editButton {
+    display: inline-block;
+    padding: 10px 20px; 
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #fff; /* Cor do texto */
+    background-color: #4CAF50; /* Cor de fundo verde */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+}
+
+.editButton:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+}
+
+.editButtons:active {
+    background-color: #388e3c; /* Cor de fundo ao clicar */
+    transform: scale(1); /* Mantém o tamanho normal ao clicar */
+}
