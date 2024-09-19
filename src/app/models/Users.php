@@ -1,6 +1,6 @@
 <?php
 
-namespace src\app;
+namespace src\app\models;
 
 use CoffeeCode\DataLayer\DataLayer;
 

@@ -3,7 +3,9 @@
 namespace src\app\controllers;
 
 require __DIR__ . "/../models/Posts.php";
+require __DIR__ . "/../models/Users.php";
 
+use src\app\models\Users;
 use src\app\models\Posts;
 
 class PostsController
@@ -12,6 +14,9 @@ class PostsController
     {
         $postModel = new Posts();
         $posts = $postModel->find()->fetch(true);
+
+        $userModel = new Users(); // Certifique-se de ter uma model Users
+        $users = $userModel->find()->fetch(true);
 
         require __DIR__ . "/../../../views/home.php";
     }
