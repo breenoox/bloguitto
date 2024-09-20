@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="<?= 'views/styles/style.css'?>">
 </head>
 <body>
-    
+
     <header>
         <div class="header-content">
             <h1 class="logo">Bloguitto</h1>
@@ -15,6 +15,7 @@
 
     <div class="teste-1">
         <h1>Posts</h1>
+        <a href="/bloguitto/create" class="createPost">Criar novo post</a>
         <div class="teste">
             <?php if (!empty($posts)): ?>
                 <?php foreach ($posts as $post): ?>

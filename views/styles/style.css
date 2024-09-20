@@ -99,6 +99,20 @@ button {
     margin-left: 10px;
 }
 
+.createPost {
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: #FE6613; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px;
+    text-decoration: none; 
+    cursor: pointer; 
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease; 
+}
+
 .deleteButton {
     background-color: #FE6613; 
 }
@@ -113,6 +127,10 @@ button {
 
 .editButton:hover {
     background-color: #141c39; 
+}
+
+.createPost:hover {
+    background-color: #cc5310; /* Cor ao passar o mouse */
 }
 
 a {
