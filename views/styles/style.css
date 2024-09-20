@@ -1,107 +1,128 @@
-*  {
-    margin: 0;      
-    padding: 0;    
-    box-sizing: border-box; 
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0; 
+    font-family: 'Roboto', sans-serif;
 }
 
-.teste {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+header {
+    width: 100%; 
+    background-color: #1B2653; 
+    padding: 15px 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; 
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    width: 100%; 
+}
+
+.logo {
+    color: #FE6613; 
+    font-size: 24px; 
+    margin: 0; 
+}
+
+.logout {
+    color: white; 
+    text-decoration: none; 
+    font-size: 16px; 
+    padding: 5px 10px; 
+}
+
+.logout:hover {
+    text-decoration: underline; 
 }
 
 .teste-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    width: 600px; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    margin: 20px auto; 
 }
 
 h1 {
-    margin-bottom: 20px;
+    color: #1B2653; 
+    margin-bottom: 20px; 
 }
 
-button {
+.teste {
+    list-style: none; 
+    padding: 0;
+}
+
+li {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h2 {
+    color: #787878; 
     margin-bottom: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.editButton, .deleteButton  {
-    display: inline-block;
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: #fff; /* Cor do texto */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Cantos arredondados */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-    cursor: pointer; /* Muda o cursor para uma mãozinha */
-    width: 150px; /* Largura fixa para todos os botões */
+h4 {
+    color: #FE6613;
+    margin-top: 10px;
 }
 
+p {
+    color: #333; 
+}
 
-/* Estilo do botão de excluir */
+.botoes {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}
+
 .deleteButton {
-    display: inline-block;
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: #fff; /* Cor do texto */
-    background-color: #f44336; /* Cor de fundo vermelha */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Cantos arredondados */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-    cursor: pointer; /* Muda o cursor para uma mãozinha */
+    background-color: #FE6613; 
 }
 
 .deleteButton:hover {
-    background-color: #d32f2f; /* Cor de fundo ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+    background-color: #cc5310; 
 }
-
-.deleteButton:active {
-    background-color: #c62828; /* Cor de fundo ao clicar */
-    transform: scale(1); /* Mantém o tamanho normal ao clicar */
-}
-
 
 .editButton {
-    display: inline-block;
-    padding: 10px 20px; 
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: #fff; /* Cor do texto */
-    background-color: #4CAF50; /* Cor de fundo verde */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Cantos arredondados */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-    cursor: pointer; /* Muda o cursor para uma mãozinha */
+    background-color: #1B2653; 
 }
 
 .editButton:hover {
-    background-color: #45a049; /* Cor de fundo ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+    background-color: #141c39; 
 }
 
-.editButtons:active {
-    background-color: #388e3c; /* Cor de fundo ao clicar */
-    transform: scale(1); /* Mantém o tamanho normal ao clicar */
+a {
+    text-decoration: none;
+    color: #FE6613;
+    font-size: 14px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
