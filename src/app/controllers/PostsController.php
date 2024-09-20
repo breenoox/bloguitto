@@ -12,10 +12,13 @@ class PostsController
 {
     public function readPosts()
     {
+        $userController = new UsersController();
+        $userController->checkLogin();
+
         $postModel = new Posts();
         $posts = $postModel->find()->fetch(true);
 
-        $userModel = new Users(); // Certifique-se de ter uma model Users
+        $userModel = new Users();
         $users = $userModel->find()->fetch(true);
 
         require __DIR__ . "/../../../views/home.php";
@@ -23,9 +26,15 @@ class PostsController
 
     public function createPost()
     {
+        session_start();
+
+        if(!isset($_SESSION['user_id'])) {
+            header('Location: /bloguitto/login');
+            exit;
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $userId = $_POST['user_id'];
+            $userId = $_SESSION['user_id'];
             $title = $_POST['title'];
             $description = $_POST['description'];
 

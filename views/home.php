@@ -8,6 +8,7 @@
     <?php if (!empty($posts)): ?>
         <div class="teste-1">
             <h1>Posts</h1>
+            <a href="/bloguitto/logout">SAAAair</a>
         <div class="teste">
             <?php foreach ($posts as $post): ?>
                 <li>
@@ -24,16 +25,18 @@
 
                 </li>
 
-                <div class="botoes">
-                    <form method="post" action="/bloguitto/delete/<?php echo ($post->post_id); ?>">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="deleteButton">Excluir</button>
-                    </form>
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] === $post->user_id):?>
+                    <div class="botoes">
+                        <form method="post" action="/bloguitto/delete/<?php echo ($post->post_id); ?>">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="deleteButton">Excluir</button>
+                        </form>
 
-                    <form method="get" action="/bloguitto/edit/<?php echo ($post->post_id); ?>">
-                        <button type="submit" class="editButton">Editar</button>
-                    </form>
-                </div>
+                        <form method="get" action="/bloguitto/edit/<?php echo ($post->post_id); ?>">
+                            <button type="submit" class="editButton">Editar</button>
+                        </form>
+                    </div>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
         </div>
