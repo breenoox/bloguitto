@@ -1,0 +1,63 @@
+/* Estilos gerais */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha no topo */
+    background-color: #f0f0f0; /* Cor de fundo */
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 600px; /* Largura da caixa de criação de post */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efeito de sombra */
+    text-align: center;
+    margin-top: 50px; /* Espaçamento superior */
+}
+
+h1 {
+    color: #1B2653; /* Cor do título principal */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+label {
+    display: block; /* Força cada label a ocupar uma linha */
+    text-align: left; /* Alinha o texto da label à esquerda */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #1B2653; /* Cor da label */
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea {
+    width: 100%; /* Faz o input e textarea ocuparem toda a largura */
+    padding: 10px;
+    margin-bottom: 20px; /* Espaçamento abaixo do campo */
+    border: 1px solid #787878; /* Borda padrão */
+    border-radius: 5px; /* Canto arredondado */
+    font-size: 16px; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+textarea {
+    resize: vertical; /* Permite que o textarea seja redimensionado verticalmente */
+    height: 150px; /* Altura inicial */
+}
+
+button.updateButton {
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #1B2653; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none;
+    border-radius: 5px; /* Borda arredondada */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease; /* Transição suave na cor */
+}
+
+button.updateButton:hover {
+    background-color: #141c39; /* Cor mais escura ao passar o mouse */
+}
