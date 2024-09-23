@@ -1,63 +1,62 @@
-/* Estilos gerais */
 html, body {
     height: 100%;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Alinha no topo */
-    background-color: #f0f0f0; /* Cor de fundo */
+    justify-content: center; 
+    align-items: flex-start; 
+    background-color: #f0f0f0; 
     font-family: 'Roboto', sans-serif;
 }
 
 .container {
-    width: 600px; /* Largura da caixa de criação de post */
+    width: 600px; 
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efeito de sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     text-align: center;
-    margin-top: 50px; /* Espaçamento superior */
+    margin-top: 50px; 
 }
 
 h1 {
-    color: #1B2653; /* Cor do título principal */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #1B2653; 
+    margin-bottom: 20px; 
 }
 
 label {
-    display: block; /* Força cada label a ocupar uma linha */
-    text-align: left; /* Alinha o texto da label à esquerda */
-    font-size: 16px; /* Tamanho da fonte */
-    color: #1B2653; /* Cor da label */
+    display: block; 
+    text-align: left; 
+    font-size: 16px;
+    color: #1B2653; 
     margin-bottom: 5px;
 }
 
 input[type="text"], textarea {
-    width: 100%; /* Faz o input e textarea ocuparem toda a largura */
+    width: 100%; 
     padding: 10px;
-    margin-bottom: 20px; /* Espaçamento abaixo do campo */
-    border: 1px solid #787878; /* Borda padrão */
-    border-radius: 5px; /* Canto arredondado */
-    font-size: 16px; /* Tamanho da fonte */
-    box-sizing: border-box; /* Inclui padding na largura */
+    margin-bottom: 20px; 
+    border: 1px solid #787878; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    box-sizing: border-box; 
 }
 
 textarea {
-    resize: vertical; /* Permite que o textarea seja redimensionado verticalmente */
-    height: 150px; /* Altura inicial */
+    resize: vertical; 
+    height: 150px; 
 }
 
 button.createButton {
-    padding: 10px 20px; /* Espaçamento interno */
-    background-color: #FE6613; /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
+    padding: 10px 20px; 
+    background-color: #FE6613; 
+    color: white;
     border: none;
-    border-radius: 5px; /* Borda arredondada */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de ponteiro */
-    transition: background-color 0.3s ease; /* Transição suave na cor */
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 
 button.createButton:hover {
-    background-color: #cc5310; /* Cor mais escura ao passar o mouse */
+    background-color: #cc5310; 
 }

@@ -1,15 +1,10 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-
 require __DIR__ . "/vendor/autoload.php";
 require __DIR__ . "/src/ConfigRouter.php";
 require __DIR__ . "/src/Config.php";
 require __DIR__ . "/src/app/controllers/PostsController.php";
 require __DIR__ . "/src/app/controllers/UsersController.php";
-
 
 use CoffeeCode\Router\Router;
 
