@@ -130,14 +130,13 @@ button {
 }
 
 .createPost:hover {
-    background-color: #cc5310; /* Cor ao passar o mouse */
+    background-color: #cc5310; 
 }
 
 a {
     text-decoration: none;
     color: #FE6613;
     font-size: 14px;
-    float: right;
     margin-bottom: 20px;
 }
 

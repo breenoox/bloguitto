@@ -37,12 +37,6 @@ class UsersController
             $first_name = $_POST['first_name'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $confirm_password = $_POST['confirm_password'];
-
-            if($password !== $confirm_password) {
-                echo "As senhas não coincidem.";
-                return;
-            }
     
             $userModel = new Users();
             $existingUser = $userModel->find("email = :email", "email={$email}")->fetch();
@@ -88,7 +82,4 @@ class UsersController
         header('Location: /bloguitto/login');
         exit;
     }
-
-
-
 }

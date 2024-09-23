@@ -17,9 +17,6 @@
             <label for="">Senha</label>
             <input type="password" name="password" placeholder="Senha" required>
 
-            <label for="">Confirmar senha</label>
-            <input type="password" name="confirm_password" placeholder="Confirme a Senha" required>
-
             <p>Já possui uma conta? <b><a href="/bloguitto/login">Acesse aqui</a></b> </p>
 
             <button type="submit">Registrar</button>
