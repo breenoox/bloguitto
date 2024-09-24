@@ -25,7 +25,7 @@ class UsersController
                     header('Location: ' . URL_BASE);
                     exit;
                 } else {
-                    echo "Email ou senha incorretos";
+                    $error_message =  "Email ou senha incorretos";
                 }        
         } 
         require __DIR__ . "/../../../views/login.php";

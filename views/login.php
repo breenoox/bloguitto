@@ -15,11 +15,25 @@
             <label for="">Senha</label>
             <input type="password" name="password" placeholder="Senha" required>
 
+            <?php if (isset($error_message)): ?>
+                <p style="color: red;"><?= $error_message; ?></p>
+            <?php endif; ?>
+
             <p>Não tem uma conta? <b><a href="/bloguitto/register">Cadastre-se</a></b></p>
-            <p><?php echo $teste ?></p>
             
             <button type="submit">Entrar</button>
+
         </form>
     </div>
+
+
+    <script>
+        function toggleLoginButton() {
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const loginButton = document.querySelector('button[type="submit"]');
+            loginButton.disabled = !(email && password);
+        }
+    </script>
 </body>
 </html>
