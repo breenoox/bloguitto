@@ -17,10 +17,24 @@
             <label for="">Senha</label>
             <input type="password" name="password" placeholder="Senha" required>
 
+            <?php if(isset($existingUser)): ?> 
+                <p style="color: red;"><?= $error_message_existing_user; ?></p>
+            <?php endif; ?>
+            
             <p>Já possui uma conta? <b><a href="/bloguitto/login">Acesse aqui</a></b> </p>
 
             <button type="submit">Registrar</button>
     </form>
     </div>
+
+    <script>
+        function toggleRegisterButton() {
+            const name = document.querySelector('input[name="first_name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const registerButton = document.querySelector('button[type="submit"]');
+            registerButton.disabled = !(name && email && password);
+    }
+    </script>
 </body>
 </html>

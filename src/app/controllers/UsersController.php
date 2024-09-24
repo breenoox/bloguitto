@@ -41,24 +41,23 @@ class UsersController
             $userModel = new Users();
             $existingUser = $userModel->find("email = :email", "email={$email}")->fetch();
     
-            if($existingUser) {
-                echo "Este email já está em uso";
-                return;
-            }
-    
-            $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-    
-            $newUser = new Users();
-            $newUser->first_name = $first_name;
-            $newUser->email = $email;
-            $newUser->password = $hashedPass;
-    
-            if($newUser->save()) {
-                echo "Usuário criado com sucesso";
-                header('Location: /bloguitto/login');
-                exit;
+            if(isset($existingUser)) {
+                $error_message_existing_user =  "Este email já está em uso";
             } else {
-                echo "Erro ao criar usuário";
+                $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+    
+                $newUser = new Users();
+                $newUser->first_name = $first_name;
+                $newUser->email = $email;
+                $newUser->password = $hashedPass;
+        
+                if($newUser->save()) {
+                    echo "Usuário criado com sucesso";
+                    header('Location: /bloguitto/login');
+                    exit;
+                } else {
+                    echo "Erro ao criar usuário";
+                }
             }
         }
         require __DIR__ . "/../../../views/register.php";
