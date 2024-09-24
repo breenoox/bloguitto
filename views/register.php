@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Registro</title>
-    <link rel="stylesheet" href="<?= 'views/styles/register.css'?>">
+    <link rel="stylesheet" href="/bloguitto/views/styles/register.css">
 </head>
 <body>
     <div class="container">

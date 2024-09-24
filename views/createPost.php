@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Criar Novo Post</title>
-    <link rel="stylesheet" href="<?= 'views/styles/createPost.css'?>">
+    <link rel="stylesheet" href="/bloguitto/views/styles/createPost.css">
 </head>
 <body>
     <div class="container">
@@ -15,7 +15,7 @@
             <label for="description">Descrição:</label>
             <textarea id="description" name="description" required></textarea><br>
 
-            <button type="submit">Criar Post</button>
+            <button class="createButton" type="submit">Criar Post</button>
         </form>
     </div>
     

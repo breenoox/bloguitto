@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="<?= 'views/styles/login.css'?>">
+    <link rel="stylesheet" href="/bloguitto/views/styles/login.css">
 </head>
 <body>
     <div class="container">
@@ -16,6 +16,7 @@
             <input type="password" name="password" placeholder="Senha" required>
 
             <p>Não tem uma conta? <b><a href="/bloguitto/register">Cadastre-se</a></b></p>
+            <p><?php echo $teste ?></p>
             
             <button type="submit">Entrar</button>
         </form>
