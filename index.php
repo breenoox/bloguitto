@@ -31,6 +31,4 @@ $router->delete("/delete/{id}", "PostsController:deletePost");
 $router->get("/edit/{id}", "PostsController:edit");
 $router->post("/update", "PostsController:updatePost");
 
-//$router->post("/like/toggle/{postId}", "LikesController:likePost");
-
 $router->dispatch();
