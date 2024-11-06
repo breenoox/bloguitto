@@ -32,10 +32,18 @@
                         <h4><?php echo ($post->title); ?></h4>
                         <p><?php echo ($post->description); ?></p>
 
-                        <p><?php echo $post->likeCount; ?> <?= ($post->likeCount === 1) ? 'Like' : 'Likes'; ?></p>
+                        <p class="curtidas-contagem" data-post-id="<?php echo $post->id; ?>">
+                            <?php
 
-                        <button type="submit">
-                            <?= $post->userLiked ? 'Descurtir' : 'Curtir'; ?>
+                            $likeCount = $likeModel->find("post_id = :post_id", "post_id={$post->post_id}")->count();
+                            echo $likeCount . " Curtidas";
+                            ?>
+                        </p>
+
+        
+
+                        <button class="curtir-btn botaoCurtir" data-post-id="<?php echo $post->post_id; ?>" data-user-id="<?php echo $_SESSION['user_id']; ?>">
+                            <?php echo $curtido ? "Descurtir" : "Curtir"; ?>
                         </button>
 
                         <form method="get" action="/bloguitto/comentar/<?php echo ($post->post_id); ?>">
@@ -86,5 +94,41 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('.curtir-btn').on('click', function() {
+    var postId = $(this).data('post-id');
+    var userId = $(this).data('user-id');  // Este valor deve ser recuperado, por exemplo, do sessionStorage ou variáveis no HTML
+
+    $.ajax({
+        url: '/bloguitto/curtir',  // A URL do seu endpoint PHP
+        type: 'POST',
+        data: {
+            post_id: postId,
+            user_id: userId
+        },
+        success: function(response) {
+            // Converta a resposta JSON para um objeto JavaScript
+            var data = JSON.parse(response);
+
+            // Atualize o texto do botão de curtir/descurtir
+            if (data.liked) {
+                $('.curtir-btn[data-post-id="' + postId + '"]').text('Descurtir');
+            } else {
+                $('.curtir-btn[data-post-id="' + postId + '"]').text('Curtir');
+            }
+
+            // Atualize o número de curtidas
+            $('.curtidas-contagem[data-post-id="' + postId + '"]').text(data.like_count + ' Curtidas');
+        },
+        error: function() {
+            alert('Ocorreu um erro ao tentar curtir o post.');
+        }
+    });
+});
+    });
+</script>
 
 </html>

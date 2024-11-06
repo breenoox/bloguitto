@@ -37,4 +37,6 @@ $router->post("/enviarComentario", "ComentariosController:enviarComentario");
 
 $router->delete("/deletarComentario/{id}", "ComentariosController:deletarComentario");
 
+$router->post("/curtir", "PostsController:curtirPost");
+
 $router->dispatch();

@@ -128,6 +128,10 @@ button {
     background-color: #FE6613; 
 }
 
+.botaoCurtir {
+    background-color: #65B307;
+}
+
 .comentarBotao {
     background-color: #86b0ff;
 }
