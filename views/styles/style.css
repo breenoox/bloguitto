@@ -113,8 +113,23 @@ button {
     transition: background-color 0.3s ease; 
 }
 
+.comentario {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 10px; 
+}
+
+.comentario.deleteButton {
+    justify-content: flex-end;
+}
+
 .deleteButton {
     background-color: #FE6613; 
+}
+
+.comentarBotao {
+    background-color: #86b0ff;
 }
 
 .deleteButton:hover {

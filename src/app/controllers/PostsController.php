@@ -7,6 +7,7 @@ require __DIR__ . "/../models/Users.php";
 
 use src\app\models\Users;
 use src\app\models\Posts;
+use src\app\models\Comentario;
 
 class PostsController
 {
@@ -18,8 +19,23 @@ class PostsController
         $postModel = new Posts();
         $posts = $postModel->find()->fetch(true);
 
+        $comentarios = (new Comentario())->find()->fetch(true);
+        $comentariosPorPost = [];
+        foreach ($comentarios as $comentario) {
+            $comentariosPorPost[$comentario->post_id][] = $comentario;
+        }
+
+
+
         $userModel = new Users();
         $users = $userModel->find()->fetch(true);
+
+        $usuariosPorId = [];
+        foreach ($users as $usuario) {
+            $usuariosPorId[$usuario->id] = $usuario;
+        }
+
+        extract(compact('posts', 'comentariosPorPost', 'users'));
 
         require __DIR__ . "/../../../views/home.php";
     }
@@ -28,7 +44,7 @@ class PostsController
     {
         session_start();
 
-        if(!isset($_SESSION['user_id'])) {
+        if (!isset($_SESSION['user_id'])) {
             header('Location: /bloguitto/login');
             exit;
         }
@@ -48,19 +64,19 @@ class PostsController
                 exit;
             } else {
                 echo "Erro ao criar o post.";
-            } 
-        } 
+            }
+        }
 
         require __DIR__ . "/../../../views/createPost.php";
     }
 
     public function deletePost($data)
     {
-        if(isset($data['id'])) {
+        if (isset($data['id'])) {
             $post = (new Posts())->findById($data['id']);
 
-            if($post) {
-                if($post->destroy()) {
+            if ($post) {
+                if ($post->destroy()) {
                     header('Location: ' . URL_BASE);
                     exit;
                 } else {
@@ -94,7 +110,6 @@ class PostsController
                     } else {
                         echo "Erro ao atualizar o post. ";
                     }
-
                 } else {
                     echo "Post não encontrado.";
                 }

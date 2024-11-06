@@ -5,6 +5,7 @@ require __DIR__ . "/src/ConfigRouter.php";
 require __DIR__ . "/src/Config.php";
 require __DIR__ . "/src/app/controllers/PostsController.php";
 require __DIR__ . "/src/app/controllers/UsersController.php";
+require __DIR__ . "/src/app/controllers/ComentarioController.php";
 
 use CoffeeCode\Router\Router;
 
@@ -30,5 +31,10 @@ $router->delete("/delete/{id}", "PostsController:deletePost");
 
 $router->get("/edit/{id}", "PostsController:edit");
 $router->post("/update", "PostsController:updatePost");
+
+$router->get("/comentar/{id}", "ComentariosController:comentarPost");
+$router->post("/enviarComentario", "ComentariosController:enviarComentario");
+
+$router->delete("/deletarComentario/{id}", "ComentariosController:deletarComentario");
 
 $router->dispatch();
